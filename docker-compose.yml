@@ -1,0 +1,42 @@
+# Usage: copy .env.example to .env (optional but needed for /chat), then: docker compose up --build
+# Backend: http://localhost:8000/docs   Frontend: http://localhost:8501
+x-app-env: &app-env
+  env_file:
+    - path: .env
+      required: false          # requires Docker Compose >= 2.24; remove this key on older versions
+
+services:
+  backend:
+    build: .
+    <<: *app-env
+    environment:
+      # Persistent locations inside the shared volume (override anything set in .env)
+      VECTOR_STORE_PATH: /app/data/vector_store
+      DATABASE_URL: sqlite:////app/data/app.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - app_data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4).status == 200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3
+    restart: unless-stopped
+
+  frontend:
+    build: .
+    <<: *app-env
+    command: ["streamlit", "run", "frontend/app.py", "--server.address", "0.0.0.0", "--server.port", "8501", "--server.headless", "true"]
+    environment:
+      API_BASE_URL: http://backend:8000   # service name, not localhost
+    ports:
+      - "8501:8501"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  app_data:       # holds the FAISS index, SQLite database and the Hugging Face model cache

@@ -1,0 +1,28 @@
+[project]
+name = "enterprise-ai-knowledge-assistant"
+version = "0.1.0"
+description = "RAG-based document question answering with source citations (FastAPI + Streamlit)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.setuptools.packages.find]
+include = ["backend*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["live: needs a configured LLM provider and network"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+# B008: FastAPI's Depends()/File() in argument defaults is the documented idiom.
+ignore = ["B008"]
+
+[tool.ruff.format]
+quote-style = "double"

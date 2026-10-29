@@ -1,0 +1,21 @@
+# Runtime dependencies (versions verified in the development environment unless noted).
+# Backend
+fastapi==0.162.0
+uvicorn==0.54.0
+pydantic==2.14.1
+pydantic-settings==2.16.2
+python-dotenv==1.2.4
+python-multipart==0.0.32
+SQLAlchemy==2.1.6
+# Documents, vectors, numerics
+pypdf==6.21.3
+faiss-cpu==1.15.1
+numpy==2.5.4
+pandas==3.1.0
+# LLM provider
+openai==3.40.0
+# Embeddings (NOT installed/imported in the dev sandbox: version is the latest on PyPI at build time)
+sentence-transformers==6.2.0
+# HTTP client + frontend
+httpx==0.28.1
+streamlit==1.66.1
