@@ -1,0 +1,26 @@
+{
+  "description": "Questions about the fictional sample PDF sample_documents/northwind_policies.pdf. Answerable questions list the PDF page(s) that support the answer; expected_keywords are matched with word boundaries (deterministic proxy, not a semantic judgement).",
+  "document": "sample_documents/northwind_policies.pdf",
+  "questions": [
+    {"id": "q01", "question": "How many paid vacation days do full-time employees receive per year?", "expected_answer": "22 paid vacation days per calendar year.", "expected_keywords": ["22"], "source": {"filename": "northwind_policies.pdf", "pages": [1]}},
+    {"id": "q02", "question": "How many unused vacation days can be carried over into the following year?", "expected_answer": "Up to 5 days.", "expected_keywords": ["5"], "source": {"filename": "northwind_policies.pdf", "pages": [1]}},
+    {"id": "q03", "question": "After how many consecutive sick days is a medical certificate required?", "expected_answer": "After 3 consecutive sick days.", "expected_keywords": ["3"], "source": {"filename": "northwind_policies.pdf", "pages": [2]}},
+    {"id": "q04", "question": "How long is parental leave?", "expected_answer": "16 weeks at full pay.", "expected_keywords": ["16"], "source": {"filename": "northwind_policies.pdf", "pages": [2]}},
+    {"id": "q05", "question": "How often must passwords be rotated?", "expected_answer": "Every 90 days.", "expected_keywords": ["90"], "source": {"filename": "northwind_policies.pdf", "pages": [3]}},
+    {"id": "q06", "question": "What is the minimum password length?", "expected_answer": "At least 14 characters.", "expected_keywords": ["14"], "source": {"filename": "northwind_policies.pdf", "pages": [3]}},
+    {"id": "q07", "question": "Within how many hours must a lost or stolen device be reported to the security team?", "expected_answer": "Within 24 hours.", "expected_keywords": ["24"], "source": {"filename": "northwind_policies.pdf", "pages": [4]}},
+    {"id": "q08", "question": "What kind of encryption must company laptops use?", "expected_answer": "Full-disk encryption.", "expected_keywords": ["encryption"], "source": {"filename": "northwind_policies.pdf", "pages": [4]}},
+    {"id": "q09", "question": "How much are meals reimbursed per day while traveling?", "expected_answer": "Up to 60 dollars per day.", "expected_keywords": ["60"], "source": {"filename": "northwind_policies.pdf", "pages": [5]}},
+    {"id": "q10", "question": "What is the maximum hotel reimbursement per night?", "expected_answer": "Up to 180 dollars per night.", "expected_keywords": ["180"], "source": {"filename": "northwind_policies.pdf", "pages": [5]}},
+    {"id": "q11", "question": "Flights costing more than what amount require prior manager approval?", "expected_answer": "More than 500 dollars.", "expected_keywords": ["500"], "source": {"filename": "northwind_policies.pdf", "pages": [5]}},
+    {"id": "q12", "question": "Within how many days must expense receipts be submitted?", "expected_answer": "Within 30 days.", "expected_keywords": ["30"], "source": {"filename": "northwind_policies.pdf", "pages": [5]}},
+    {"id": "q13", "question": "How many days per week may employees work remotely?", "expected_answer": "Up to 3 days per week.", "expected_keywords": ["3"], "source": {"filename": "northwind_policies.pdf", "pages": [6]}},
+    {"id": "q14", "question": "How large is the one-time home office stipend?", "expected_answer": "400 dollars.", "expected_keywords": ["400"], "source": {"filename": "northwind_policies.pdf", "pages": [6]}},
+    {"id": "q15", "question": "What are the core collaboration hours?", "expected_answer": "10:00 to 15:00 local time.", "expected_keywords": ["10:00", "15:00"], "source": {"filename": "northwind_policies.pdf", "pages": [6]}}
+  ],
+  "unanswerable": [
+    {"id": "u01", "question": "What is the chief executive's annual salary?"},
+    {"id": "u02", "question": "Does the company offer pet insurance?"},
+    {"id": "u03", "question": "Which cloud provider hosts the production servers?"}
+  ]
+}
