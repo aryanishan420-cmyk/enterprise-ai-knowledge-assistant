@@ -1,0 +1,122 @@
+{
+  "generated_at": "2026-10-29T03:50:49Z",
+  "mode": "offline-retrieval",
+  "embedder": {
+    "name": "hashing-384",
+    "semantic": false
+  },
+  "llm_model": null,
+  "config": {
+    "chunk_size": 800,
+    "chunk_overlap": 120,
+    "ks": [
+      1,
+      3,
+      5
+    ]
+  },
+  "dataset": {
+    "path": "/home/claude/eaka/evaluation_data/sample_questions.json",
+    "questions": 15,
+    "unanswerable": 3,
+    "indexed_chunks": 6,
+    "indexed_pages": 6
+  },
+  "retrieval": {
+    "n_questions": 15,
+    "recall_at_k": {
+      "1": 0.9333,
+      "3": 1.0,
+      "5": 1.0
+    },
+    "mrr": 0.9667,
+    "latency_ms": {
+      "mean": 0.07,
+      "p95": 0.14
+    },
+    "per_question": [
+      {
+        "id": "q01",
+        "rank": 1,
+        "retrieval_ms": 0.23
+      },
+      {
+        "id": "q02",
+        "rank": 1,
+        "retrieval_ms": 0.1
+      },
+      {
+        "id": "q03",
+        "rank": 1,
+        "retrieval_ms": 0.06
+      },
+      {
+        "id": "q04",
+        "rank": 1,
+        "retrieval_ms": 0.04
+      },
+      {
+        "id": "q05",
+        "rank": 1,
+        "retrieval_ms": 0.05
+      },
+      {
+        "id": "q06",
+        "rank": 2,
+        "retrieval_ms": 0.04
+      },
+      {
+        "id": "q07",
+        "rank": 1,
+        "retrieval_ms": 0.06
+      },
+      {
+        "id": "q08",
+        "rank": 1,
+        "retrieval_ms": 0.04
+      },
+      {
+        "id": "q09",
+        "rank": 1,
+        "retrieval_ms": 0.09
+      },
+      {
+        "id": "q10",
+        "rank": 1,
+        "retrieval_ms": 0.06
+      },
+      {
+        "id": "q11",
+        "rank": 1,
+        "retrieval_ms": 0.05
+      },
+      {
+        "id": "q12",
+        "rank": 1,
+        "retrieval_ms": 0.05
+      },
+      {
+        "id": "q13",
+        "rank": 1,
+        "retrieval_ms": 0.05
+      },
+      {
+        "id": "q14",
+        "rank": 1,
+        "retrieval_ms": 0.04
+      },
+      {
+        "id": "q15",
+        "rank": 1,
+        "retrieval_ms": 0.04
+      }
+    ]
+  },
+  "generation": null,
+  "caveats": [
+    "Tiny fictional dataset; results show the pipeline works, not production quality.",
+    "Recall@k with k >= number of pages is trivially 1.0 for page-level relevance.",
+    "keyword_match is a deterministic proxy; faithfulness_estimate (if present) is LLM-judged and is an estimate, not ground truth.",
+    "Embedder is lexical hashing (NOT semantic): numbers reflect word overlap only."
+  ]
+}
